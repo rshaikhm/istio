@@ -120,12 +120,22 @@ milestone cannot be considered achieved if the issue isn't resolved.
 - **step 1**
     - [Namespace]
     > kubectl create namespace istio-system
+
     > helm install istio-base istio/base -n istio-system
-    > helm install istiod istio/istiod -n istio-system --wait\
+    
+    > helm install istiod istio/istiod -n istio-system --wait
+    
     > istioctl install --set profile=demo -y
+    
     > kubectl label namespace [value] istio-injection=enabled
 
-    
+
+    - [network mapping] https://github.com/rshaikhm/images/blob/main/Capture.PNG
+
+     kubectl apply -f samples/addons
+     
+     $ istioctl dashboard kiali
+
 
 
 - **pre-requisite**
